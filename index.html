@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio pessoal de Williana">
+  <title>Williana — Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">Williana</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#inicio" class="nav__link">Início</a></li>
+        <li><a href="#sobre" class="nav__link">Sobre</a></li>
+        <li><a href="#projetos" class="nav__link">Projetos</a></li>
+        <li><a href="#contato" class="nav__link">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero container">
+      <h1>Olá, eu sou <span class="destaque">Williana</span></h1>
+      <p class="hero__subtitulo">Bem-vindo(a) ao meu portfólio.</p>
+      <a href="#projetos" class="botao">Ver projetos</a>
+    </section>
+
+    <section id="sobre" class="secao container">
+      <h2>Sobre mim</h2>
+      <p>
+        Escreva aqui uma breve apresentação: quem você é, o que faz
+        e o que está buscando.
+      </p>
+    </section>
+
+    <section id="projetos" class="secao container">
+      <h2>Projetos</h2>
+      <div class="projetos__grid">
+        <article class="card">
+          <h3>Projeto 1</h3>
+          <p>Descrição curta do projeto.</p>
+          <a href="#" class="card__link">Ver mais →</a>
+        </article>
+        <article class="card">
+          <h3>Projeto 2</h3>
+          <p>Descrição curta do projeto.</p>
+          <a href="#" class="card__link">Ver mais →</a>
+        </article>
+        <article class="card">
+          <h3>Projeto 3</h3>
+          <p>Descrição curta do projeto.</p>
+          <a href="#" class="card__link">Ver mais →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="secao container">
+      <h2>Contato</h2>
+      <p>Me encontre nas redes ou envie um e-mail:</p>
+      <ul class="contato__lista">
+        <li><a href="mailto:seuemail@exemplo.com">E-mail</a></li>
+        <li><a href="https://github.com/Kelvyncode" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Williana. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
