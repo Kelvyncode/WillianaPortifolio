@@ -3,73 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio pessoal de Williana">
-  <title>Williana — Portfólio</title>
+  <meta name="description" content="Portfólio de Williana Maria — Logística, Dados e Automação de Processos">
+  <title>Williana Maria — Logística &amp; Dados</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <header class="header">
     <nav class="nav container">
-      <a href="#inicio" class="nav__logo">Williana</a>
+      <a href="#inicio" class="nav__logo">WM<span class="ponto">.</span></a>
       <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">☰</button>
       <ul class="nav__menu" id="nav-menu">
         <li><a href="#inicio" class="nav__link">Início</a></li>
         <li><a href="#sobre" class="nav__link">Sobre</a></li>
-        <li><a href="#projetos" class="nav__link">Projetos</a></li>
+        <li><a href="#trajetoria" class="nav__link">Trajetória</a></li>
+        <li><a href="#automacoes" class="nav__link">Automações</a></li>
+        <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+        <li><a href="#galeria" class="nav__link">Galeria</a></li>
         <li><a href="#contato" class="nav__link">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+
+    <!-- ===== HERO ===== -->
     <section id="inicio" class="hero container">
-      <h1>Olá, eu sou <span class="destaque">Williana</span></h1>
-      <p class="hero__subtitulo">Bem-vindo(a) ao meu portfólio.</p>
-      <a href="#projetos" class="botao">Ver projetos</a>
+      <div class="hero__texto reveal">
+        <p class="hero__tag">Logística · Finanças · Dados</p>
+        <h1>Williana<br>Maria<span class="ponto">.</span></h1>
+        <p class="hero__subtitulo">
+          Transformo processos manuais em fluxos inteligentes —
+          com visão orientada a dados e impacto real no negócio.
+        </p>
+        <div class="hero__acoes">
+          <a href="#automacoes" class="botao">Ver automações</a>
+          <a href="#contato" class="botao botao--vazado">Fale comigo</a>
+        </div>
+      </div>
+
+      <!-- Foto de perfil: coloque sua foto em assets/foto-perfil.jpg -->
+      <div class="hero__foto reveal">
+        <img src="assets/foto-perfil.jpg" alt="Foto de Williana Maria"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="foto-placeholder" style="display:none">
+          <span>WM</span>
+          <small>sua foto aqui<br>assets/foto-perfil.jpg</small>
+        </div>
+      </div>
     </section>
 
+    <!-- ===== NÚMEROS ===== -->
+    <section class="numeros">
+      <div class="container numeros__grid">
+        <div class="numero reveal">
+          <strong>4</strong>
+          <span>anos de experiência</span>
+        </div>
+        <div class="numero reveal">
+          <strong>4</strong>
+          <span>automações criadas do zero</span>
+        </div>
+        <div class="numero reveal">
+          <strong>3</strong>
+          <span>áreas integradas: operações, finanças e análise</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
     <section id="sobre" class="secao container">
-      <h2>Sobre mim</h2>
-      <p>
-        Escreva aqui uma breve apresentação: quem você é, o que faz
-        e o que está buscando.
-      </p>
+      <h2 class="secao__titulo reveal"><span class="secao__num">01</span> Sobre mim</h2>
+      <div class="sobre__grid">
+        <div class="sobre__texto reveal">
+          <p>
+            Sou profissional com formação em <strong>Logística</strong> e especialização
+            em andamento na área de <strong>Dados</strong>. Com 4 anos de experiência,
+            atuo na interseção entre operações, finanças e análise — identificando
+            oportunidades de melhoria e transformando processos manuais em fluxos inteligentes.
+          </p>
+          <p>
+            Ao longo da minha trajetória, desenvolvi <strong>4 automações</strong> que
+            otimizaram processos estratégicos antes inexistentes na organização, com foco
+            em eficiência, rastreabilidade e redução de retrabalho.
+          </p>
+          <p>
+            Tenho experiência com rotinas financeiras e administrativas, melhoria contínua
+            e otimização de processos — sempre com visão orientada a dados e impacto real
+            no negócio.
+          </p>
+          <p>
+            Busco oportunidades onde possa combinar <strong>visão analítica</strong>,
+            <strong>senso prático</strong> e <strong>tecnologia</strong> para gerar
+            resultados concretos.
+          </p>
+        </div>
+        <aside class="sobre__cartao reveal">
+          <h3>Potencializada por IA</h3>
+          <p>Capacitação no uso de inteligência artificial aplicada ao trabalho:</p>
+          <ul>
+            <li>Claude Cowork</li>
+            <li>Claude Code</li>
+            <li>GPTs · Codex</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <section id="projetos" class="secao container">
-      <h2>Projetos</h2>
-      <div class="projetos__grid">
+    <!-- ===== TRAJETÓRIA ===== -->
+    <section id="trajetoria" class="secao secao--alt">
+      <div class="container">
+        <h2 class="secao__titulo reveal"><span class="secao__num">02</span> Trajetória</h2>
+        <div class="linha-tempo">
+          <article class="etapa reveal">
+            <span class="etapa__marcador"></span>
+            <h3>Formação em Logística</h3>
+            <p>Base sólida em operações, cadeia de suprimentos e gestão de processos.</p>
+          </article>
+          <article class="etapa reveal">
+            <span class="etapa__marcador"></span>
+            <h3>Rotinas financeiras e administrativas</h3>
+            <p>Atuação prática na interseção entre operações e finanças, com foco em
+               melhoria contínua e confiabilidade da informação.</p>
+          </article>
+          <article class="etapa reveal">
+            <span class="etapa__marcador"></span>
+            <h3>Automação de processos</h3>
+            <p>Desenvolvimento de 4 automações estratégicas — eficiência, rastreabilidade
+               e redução de retrabalho em fluxos antes 100% manuais.</p>
+          </article>
+          <article class="etapa reveal">
+            <span class="etapa__marcador"></span>
+            <h3>Especialização em Dados <em>(em andamento)</em></h3>
+            <p>Aprofundamento em análise de dados para decisões com impacto real no negócio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AUTOMAÇÕES (carrossel com barra de rolagem) ===== -->
+    <section id="automacoes" class="secao container">
+      <h2 class="secao__titulo reveal"><span class="secao__num">03</span> Automações</h2>
+      <p class="secao__descricao reveal">
+        Quatro processos estratégicos que não existiam na organização — arraste para o lado →
+      </p>
+      <div class="carrossel reveal">
         <article class="card">
-          <h3>Projeto 1</h3>
-          <p>Descrição curta do projeto.</p>
-          <a href="#" class="card__link">Ver mais →</a>
+          <span class="card__indice">A1</span>
+          <h3>Automação 1</h3>
+          <p>Descreva aqui o processo automatizado: o que era manual, o que passou a ser
+             automático e qual foi o ganho (tempo, erros, retrabalho).</p>
+          <span class="card__etiqueta">Eficiência</span>
         </article>
         <article class="card">
-          <h3>Projeto 2</h3>
-          <p>Descrição curta do projeto.</p>
-          <a href="#" class="card__link">Ver mais →</a>
+          <span class="card__indice">A2</span>
+          <h3>Automação 2</h3>
+          <p>Descreva aqui o processo automatizado e o impacto gerado para a operação
+             ou para a área financeira.</p>
+          <span class="card__etiqueta">Rastreabilidade</span>
         </article>
         <article class="card">
-          <h3>Projeto 3</h3>
-          <p>Descrição curta do projeto.</p>
-          <a href="#" class="card__link">Ver mais →</a>
+          <span class="card__indice">A3</span>
+          <h3>Automação 3</h3>
+          <p>Descreva aqui o fluxo criado, as ferramentas utilizadas e o resultado
+             concreto para o negócio.</p>
+          <span class="card__etiqueta">Redução de retrabalho</span>
+        </article>
+        <article class="card">
+          <span class="card__indice">A4</span>
+          <h3>Automação 4</h3>
+          <p>Descreva aqui o processo estratégico que passou a existir graças a esta
+             automação.</p>
+          <span class="card__etiqueta">Processo novo</span>
         </article>
       </div>
     </section>
 
-    <section id="contato" class="secao container">
-      <h2>Contato</h2>
-      <p>Me encontre nas redes ou envie um e-mail:</p>
-      <ul class="contato__lista">
-        <li><a href="mailto:seuemail@exemplo.com">E-mail</a></li>
-        <li><a href="https://github.com/Kelvyncode" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+    <!-- ===== HABILIDADES ===== -->
+    <section id="habilidades" class="secao secao--alt">
+      <div class="container">
+        <h2 class="secao__titulo reveal"><span class="secao__num">04</span> Habilidades</h2>
+        <div class="habilidades__grid">
+          <div class="habilidade reveal">
+            <h3>Operações &amp; Logística</h3>
+            <p>Gestão de processos, cadeia de suprimentos e rotinas operacionais.</p>
+          </div>
+          <div class="habilidade reveal">
+            <h3>Finanças &amp; Administração</h3>
+            <p>Rotinas financeiras e administrativas com precisão e controle.</p>
+          </div>
+          <div class="habilidade reveal">
+            <h3>Análise de Dados</h3>
+            <p>Visão orientada a dados para identificar oportunidades de melhoria.</p>
+          </div>
+          <div class="habilidade reveal">
+            <h3>Melhoria Contínua</h3>
+            <p>Otimização de processos com foco em eficiência e resultado.</p>
+          </div>
+          <div class="habilidade reveal">
+            <h3>Automação</h3>
+            <p>Transformação de fluxos manuais em processos inteligentes.</p>
+          </div>
+          <div class="habilidade reveal">
+            <h3>IA aplicada</h3>
+            <p>Claude Cowork, Claude Code e GPTs/Codex no dia a dia de trabalho.</p>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- ===== GALERIA (fotos) ===== -->
+    <section id="galeria" class="secao container">
+      <h2 class="secao__titulo reveal"><span class="secao__num">05</span> Galeria</h2>
+      <p class="secao__descricao reveal">
+        Espaço para fotos de projetos, certificados e momentos profissionais.
+        Coloque as imagens na pasta <code>assets/</code> com os nomes abaixo.
+      </p>
+      <div class="galeria__grid reveal">
+        <figure class="galeria__item">
+          <img src="assets/foto-1.jpg" alt="Foto 1"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-1.jpg</small></div>
+        </figure>
+        <figure class="galeria__item">
+          <img src="assets/foto-2.jpg" alt="Foto 2"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-2.jpg</small></div>
+        </figure>
+        <figure class="galeria__item">
+          <img src="assets/foto-3.jpg" alt="Foto 3"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-3.jpg</small></div>
+        </figure>
+        <figure class="galeria__item">
+          <img src="assets/foto-4.jpg" alt="Foto 4"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-4.jpg</small></div>
+        </figure>
+        <figure class="galeria__item">
+          <img src="assets/foto-5.jpg" alt="Foto 5"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-5.jpg</small></div>
+        </figure>
+        <figure class="galeria__item">
+          <img src="assets/foto-6.jpg" alt="Foto 6"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="foto-placeholder" style="display:none"><small>assets/foto-6.jpg</small></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="secao secao--alt">
+      <div class="container contato">
+        <h2 class="secao__titulo reveal"><span class="secao__num">06</span> Contato</h2>
+        <p class="contato__chamada reveal">
+          Vamos conversar sobre como dados e automação podem gerar
+          resultados concretos no seu negócio.
+        </p>
+        <div class="contato__links reveal">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="botao">LinkedIn</a>
+          <a href="mailto:seuemail@exemplo.com" class="botao botao--vazado">E-mail</a>
+          <a href="https://github.com/Kelvyncode" target="_blank" rel="noopener" class="botao botao--vazado">GitHub</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <p>© 2026 Williana. Todos os direitos reservados.</p>
+    <p>© 2026 Williana Maria — Logística · Dados · Automação</p>
   </footer>
 
   <script src="js/script.js"></script>
