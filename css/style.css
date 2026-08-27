@@ -218,7 +218,10 @@ html {
   object-fit: cover;
   border-radius: var(--raio);
   border: 1px solid var(--cinza-700);
-  filter: grayscale(100%); /* mantém a foto na paleta monocromática */
+}
+
+.hero__foto img {
+  object-position: 50% 75%; /* posiciona o rosto mais para cima dentro da moldura */
 }
 
 .foto-placeholder {
