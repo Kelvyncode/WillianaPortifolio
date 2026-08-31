@@ -61,7 +61,7 @@
           <span>anos de experiência</span>
         </div>
         <div class="numero reveal">
-          <strong>4</strong>
+          <strong>11</strong>
           <span>automações criadas do zero</span>
         </div>
         <div class="numero reveal">
@@ -141,42 +141,14 @@
       </div>
     </section>
 
-    <!-- ===== AUTOMAÇÕES (carrossel com barra de rolagem) ===== -->
+    <!-- ===== AUTOMAÇÕES (cards + modal de detalhes) ===== -->
     <section id="automacoes" class="secao container">
       <h2 class="secao__titulo reveal"><span class="secao__num">03</span> Automações</h2>
       <p class="secao__descricao reveal">
-        Quatro processos estratégicos que não existiam na organização — arraste para o lado →
+        Onze processos estratégicos que não existiam na organização —
+        clique na etiqueta de cada card para ver antes, agora e resultado.
       </p>
-      <div class="carrossel reveal">
-        <article class="card">
-          <span class="card__indice">A1</span>
-          <h3>Automação 1</h3>
-          <p>Descreva aqui o processo automatizado: o que era manual, o que passou a ser
-             automático e qual foi o ganho (tempo, erros, retrabalho).</p>
-          <span class="card__etiqueta">Eficiência</span>
-        </article>
-        <article class="card">
-          <span class="card__indice">A2</span>
-          <h3>Automação 2</h3>
-          <p>Descreva aqui o processo automatizado e o impacto gerado para a operação
-             ou para a área financeira.</p>
-          <span class="card__etiqueta">Rastreabilidade</span>
-        </article>
-        <article class="card">
-          <span class="card__indice">A3</span>
-          <h3>Automação 3</h3>
-          <p>Descreva aqui o fluxo criado, as ferramentas utilizadas e o resultado
-             concreto para o negócio.</p>
-          <span class="card__etiqueta">Redução de retrabalho</span>
-        </article>
-        <article class="card">
-          <span class="card__indice">A4</span>
-          <h3>Automação 4</h3>
-          <p>Descreva aqui o processo estratégico que passou a existir graças a esta
-             automação.</p>
-          <span class="card__etiqueta">Processo novo</span>
-        </article>
-      </div>
+      <div class="automacoes__grade reveal" id="automacoes-grade"></div>
     </section>
 
     <!-- ===== HABILIDADES ===== -->
@@ -262,9 +234,9 @@
           resultados concretos no seu negócio.
         </p>
         <div class="contato__links reveal">
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="botao">LinkedIn</a>
-          <a href="mailto:seuemail@exemplo.com" class="botao botao--vazado">E-mail</a>
-          <a href="https://github.com/Kelvyncode" target="_blank" rel="noopener" class="botao botao--vazado">GitHub</a>
+          <a href="https://www.linkedin.com/in/williana-s-61630a340" target="_blank" rel="noopener" class="botao">LinkedIn</a>
+          <a href="mailto:an4oliver@gmail.com" class="botao botao--vazado">E-mail</a>
+          <a href="https://github.com/An4oliver" target="_blank" rel="noopener" class="botao botao--vazado">GitHub</a>
         </div>
       </div>
     </section>
@@ -275,6 +247,20 @@
     <p>© 2026 Williana Maria — Logística · Dados · Automação</p>
   </footer>
 
+  <!-- ===== MODAL DE DETALHES DAS AUTOMAÇÕES ===== -->
+  <div class="modal" id="modal-automacao">
+    <div class="modal__caixa" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal__fechar" id="modal-fechar" type="button" aria-label="Fechar">&times;</button>
+      <p class="modal__etiqueta" id="modal-etiqueta"></p>
+      <h3 class="modal__titulo" id="modal-titulo"></h3>
+      <p class="modal__linha"><strong>Antes:</strong> <span id="modal-antes"></span></p>
+      <p class="modal__linha"><strong>Agora:</strong> <span id="modal-agora"></span></p>
+      <p class="modal__linha"><strong>Resultado:</strong> <span id="modal-resultado"></span></p>
+      <div class="modal__stack" id="modal-stack"></div>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
+  <script src="js/automacoes.js"></script>
 </body>
 </html>
