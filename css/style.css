@@ -664,7 +664,6 @@ body.sem-rolagem {
   letter-spacing: -0.01em;
 }
 
-.competencias,
 .ferramentas {
   list-style: none;
   display: flex;
@@ -672,7 +671,6 @@ body.sem-rolagem {
   gap: 0.7rem;
 }
 
-.competencias li,
 .ferramentas li {
   border: 1px solid var(--cinza-700);
   border-radius: 999px;
@@ -682,7 +680,6 @@ body.sem-rolagem {
   transition: border-color var(--transicao), color var(--transicao);
 }
 
-.competencias li:hover,
 .ferramentas li:hover {
   border-color: var(--cinza-400);
   color: var(--branco);
