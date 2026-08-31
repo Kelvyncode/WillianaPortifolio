@@ -722,60 +722,38 @@ body.sem-rolagem {
 /* ============================================================
    Galeria
    ============================================================ */
-.galeria__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.6rem;
+.galeria__unica {
   margin-top: 2rem;
 }
 
-.galeria__item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.galeria__item a {
+.galeria__unica a {
   display: block;
-  aspect-ratio: 16 / 10;
-  background: var(--cinza-900);
   border: 1px solid var(--cinza-700);
   border-radius: var(--raio);
   overflow: hidden;
   transition: border-color var(--transicao);
 }
 
-.galeria__item a:hover,
-.galeria__item a:focus-visible {
+.galeria__unica a:hover {
   border-color: var(--cinza-400);
 }
 
-.galeria__item a:focus-visible {
+.galeria__unica a:focus-visible {
   outline: 2px solid var(--branco);
   outline-offset: 3px;
 }
 
-.galeria__item img {
+.galeria__unica img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform var(--transicao);
+  height: auto;
 }
 
-.galeria__item a:hover img {
-  transform: scale(1.03);
-}
-
-.galeria__item .foto-placeholder {
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--cinza-700);
-  border-radius: var(--raio);
-}
-
-.galeria__item figcaption {
-  color: var(--cinza-400);
-  font-size: 0.85rem;
-  line-height: 1.45;
+.galeria__unica figcaption {
+  color: var(--cinza-500);
+  font-size: 0.82rem;
+  margin-top: 0.8rem;
+  letter-spacing: 0.04em;
 }
 
 /* ============================================================
