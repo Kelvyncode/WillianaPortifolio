@@ -720,43 +720,6 @@ body.sem-rolagem {
 }
 
 /* ============================================================
-   Galeria
-   ============================================================ */
-.galeria__unica {
-  margin-top: 2rem;
-}
-
-.galeria__unica a {
-  display: block;
-  border: 1px solid var(--cinza-700);
-  border-radius: var(--raio);
-  overflow: hidden;
-  transition: border-color var(--transicao);
-}
-
-.galeria__unica a:hover {
-  border-color: var(--cinza-400);
-}
-
-.galeria__unica a:focus-visible {
-  outline: 2px solid var(--branco);
-  outline-offset: 3px;
-}
-
-.galeria__unica img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.galeria__unica figcaption {
-  color: var(--cinza-500);
-  font-size: 0.82rem;
-  margin-top: 0.8rem;
-  letter-spacing: 0.04em;
-}
-
-/* ============================================================
    Contato
    ============================================================ */
 .contato {

@@ -12,8 +12,8 @@ moderno monocromático.
 4. **Automações** — grade com as 12 automações desenvolvidas; a etiqueta de cada card
    abre um modal com *antes*, *agora*, *resultado* e as ferramentas usadas. A A12 leva
    ao `dashboard-indenizacoes.html`, painel completo com Chart.js (dados fictícios)
-5. **Habilidades** — competências em operações, finanças, dados e automação
-6. **Galeria** — espaço para fotos
+5. **Habilidades** — competências técnicas, com as ferramentas de cada área
+6. **Certificações** — formação acadêmica e cursos concluídos
 7. **Contato** — LinkedIn, e-mail e GitHub
 
 ## Como adicionar as fotos
@@ -23,11 +23,9 @@ Coloque as imagens na pasta `assets/` com estes nomes:
 | Arquivo                  | Onde aparece            |
 |--------------------------|-------------------------|
 | `assets/foto-perfil.jpg` | Foto de perfil no topo  |
-| `assets/foto-1.jpg` a `assets/foto-6.jpg` | Galeria |
 
-Enquanto as fotos não existirem, o site mostra um espaço reservado indicando o nome
-do arquivo esperado. As fotos são exibidas em preto e branco para manter a paleta
-monocromática (o efeito colorido aparece ao passar o mouse na galeria).
+Enquanto a foto não existir, o site mostra um espaço reservado indicando o nome
+do arquivo esperado.
 
 ## Como personalizar
 
