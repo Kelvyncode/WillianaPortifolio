@@ -1,6 +1,6 @@
 # WillianaPortifolio
 
-Portfólio pessoal de **Williana Maria** — profissional de Logística com especialização
+Portfólio pessoal de **Williana Silva** — profissional de Logística com especialização
 em andamento na área de Dados. Site estático em HTML, CSS e JavaScript, com visual
 moderno monocromático.
 
