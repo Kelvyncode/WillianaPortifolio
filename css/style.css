@@ -412,20 +412,13 @@ html {
 }
 
 /* ============================================================
-   Automações — carrossel horizontal com barra de rolagem
+   Automações — grade de cards com modal de detalhes
    ============================================================ */
-.carrossel {
+.automacoes__grade {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min(340px, 82vw);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.4rem;
-  overflow-x: auto;
-  padding-bottom: 1.2rem; /* espaço para a barra de rolagem */
-  scroll-snap-type: x mandatory;
-}
-
-.carrossel .card {
-  scroll-snap-align: start;
+  margin-top: 2rem;
 }
 
 .card {
@@ -470,6 +463,140 @@ html {
   border: 1px solid var(--cinza-700);
   border-radius: 999px;
   padding: 0.3rem 0.8rem;
+}
+
+.card__etiqueta--botao {
+  background: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: background var(--transicao), color var(--transicao),
+    border-color var(--transicao);
+}
+
+.card__etiqueta--botao:hover {
+  background: var(--branco);
+  color: var(--preto);
+  border-color: var(--branco);
+}
+
+.card__etiqueta--botao:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 3px;
+}
+
+/* Modal de detalhes */
+body.sem-rolagem {
+  overflow: hidden;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(3px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal--aberto {
+  display: flex;
+}
+
+.modal__caixa {
+  position: relative;
+  width: min(480px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--cinza-900);
+  border: 1px solid var(--cinza-700);
+  border-radius: var(--raio);
+  padding: 2rem 2rem 2.2rem;
+  animation: modal-entrada 0.25s ease;
+}
+
+@keyframes modal-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal__fechar {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  background: transparent;
+  border: none;
+  color: var(--cinza-400);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: color var(--transicao);
+}
+
+.modal__fechar:hover {
+  color: var(--branco);
+}
+
+.modal__fechar:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 2px;
+}
+
+.modal__etiqueta {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cinza-500);
+  margin-bottom: 0.5rem;
+}
+
+.modal__titulo {
+  color: var(--branco);
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+  padding-right: 1.5rem;
+}
+
+.modal__linha {
+  color: var(--cinza-300);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+
+.modal__linha strong {
+  color: var(--branco);
+}
+
+.modal__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+}
+
+.modal__chip {
+  font-size: 0.72rem;
+  color: var(--cinza-400);
+  border: 1px solid var(--cinza-700);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal__caixa { animation: none; }
 }
 
 /* ============================================================

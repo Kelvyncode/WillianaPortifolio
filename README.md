@@ -9,7 +9,8 @@ moderno monocromático.
 1. **Início** — apresentação com foto de perfil
 2. **Sobre** — trajetória profissional e capacitação em IA (Claude Cowork, Claude Code, GPTs/Codex)
 3. **Trajetória** — linha do tempo da carreira
-4. **Automações** — carrossel com as 4 automações desenvolvidas (com barra de rolagem horizontal)
+4. **Automações** — grade com as 11 automações desenvolvidas; a etiqueta de cada card
+   abre um modal com *antes*, *agora*, *resultado* e as ferramentas usadas
 5. **Habilidades** — competências em operações, finanças, dados e automação
 6. **Galeria** — espaço para fotos
 7. **Contato** — LinkedIn, e-mail e GitHub
@@ -29,7 +30,8 @@ monocromática (o efeito colorido aparece ao passar o mouse na galeria).
 
 ## Como personalizar
 
-- **Automações**: edite os textos dos cards `A1` a `A4` no `index.html`
+- **Automações**: edite a lista `automacoes` no `js/automacoes.js` — os cards são
+  montados a partir dela; para adicionar uma nova, copie um bloco e mude os textos
 - **Contato**: troque os links de LinkedIn e e-mail na seção Contato do `index.html`
 - **Cores**: os tons de cinza estão nas variáveis `:root` do `css/style.css`
 
