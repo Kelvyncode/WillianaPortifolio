@@ -677,6 +677,49 @@ body.sem-rolagem {
 }
 
 /* ============================================================
+   Certificações
+   ============================================================ */
+.certificados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.certificado {
+  background: var(--cinza-900);
+  border: 1px solid var(--cinza-700);
+  border-left: 2px solid var(--cinza-500);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  transition: border-color var(--transicao);
+}
+
+.certificado:hover {
+  border-color: var(--cinza-400);
+  border-left-color: var(--branco);
+}
+
+.certificado h3 {
+  color: var(--branco);
+  font-size: 1.02rem;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.certificado__emissor {
+  color: var(--cinza-300);
+  font-size: 0.9rem;
+}
+
+.certificado__meta {
+  color: var(--cinza-500);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
    Galeria
    ============================================================ */
 .galeria__grid {
