@@ -394,6 +394,15 @@ html {
   border: 3px solid var(--preto);
 }
 
+.etapa__periodo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cinza-500);
+  margin-bottom: 0.35rem;
+}
+
 .etapa h3 {
   color: var(--branco);
   font-size: 1.15rem;
@@ -638,6 +647,8 @@ body.sem-rolagem {
   border: 1px solid var(--cinza-700);
   border-radius: var(--raio);
   padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
   transition: border-color var(--transicao);
 }
 
@@ -656,39 +667,13 @@ body.sem-rolagem {
   font-size: 0.92rem;
 }
 
-.habilidades__subtitulo {
-  color: var(--branco);
-  font-size: 1.1rem;
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em;
-}
-
-.ferramentas {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.ferramentas li {
-  border: 1px solid var(--cinza-700);
-  border-radius: 999px;
-  padding: 0.55rem 1.1rem;
-  font-size: 0.9rem;
-  color: var(--cinza-300);
-  transition: border-color var(--transicao), color var(--transicao);
-}
-
-.ferramentas li:hover {
-  border-color: var(--cinza-400);
-  color: var(--branco);
-}
-
-.ferramentas li {
-  background: var(--cinza-900);
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+.habilidade__ferramentas {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--cinza-800);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--cinza-500);
 }
 
 /* ============================================================
