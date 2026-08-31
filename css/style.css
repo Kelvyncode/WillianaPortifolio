@@ -587,6 +587,30 @@ body.sem-rolagem {
   margin-top: 1.3rem;
 }
 
+.modal__link {
+  display: block;
+  margin-top: 1.4rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--branco);
+  border: 1px solid var(--branco);
+  border-radius: 999px;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.modal__link:hover {
+  background: var(--branco);
+  color: var(--preto);
+}
+
+.modal__link:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 3px;
+}
+
 .modal__chip {
   font-size: 0.72rem;
   color: var(--cinza-400);

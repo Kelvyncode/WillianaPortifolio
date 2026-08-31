@@ -8,7 +8,7 @@ const automacoes = [
   {
     numero: "A1",
     tag: "Eficiência",
-    titulo: "Aviso de aniversários da equipe",
+    titulo: "Alerta de aniversários",
     resumo:
       "Substitui o controle manual de datas por avisos automáticos por e-mail e Slack.",
     antes:
@@ -22,7 +22,7 @@ const automacoes = [
   {
     numero: "A2",
     tag: "Rastreabilidade",
-    titulo: "Relatório de extravios por transportadora",
+    titulo: "Relatório de extravios",
     resumo:
       "Trata, classifica e distribui milhares de linhas de extravio sem intervenção manual.",
     antes:
@@ -36,7 +36,7 @@ const automacoes = [
   {
     numero: "A3",
     tag: "Redução de retrabalho",
-    titulo: "Cobrança automática de notas de débito",
+    titulo: "Cobrança de notas de débito",
     resumo: "Monitora vencimentos e dispara avisos e cobranças sem duplicidade.",
     antes:
       "acompanhar vencimentos de notas de débito manualmente, com risco de cobrar duas vezes ou esquecer um vencimento.",
@@ -49,7 +49,7 @@ const automacoes = [
   {
     numero: "A4",
     tag: "Padronização",
-    titulo: "Geração automática de PDFs de ND",
+    titulo: "Geração de PDFs",
     resumo:
       "Preenche, exporta e organiza documentos financeiros a partir de uma única marcação na planilha.",
     antes:
@@ -63,7 +63,7 @@ const automacoes = [
   {
     numero: "A5",
     tag: "Visibilidade",
-    titulo: "Notificação automática de fatura lançada",
+    titulo: "Alerta de fatura lançada",
     resumo:
       "Avisa a equipe assim que uma fatura de transportadora monitorada é lançada, sem duplicar avisos.",
     antes:
@@ -77,7 +77,7 @@ const automacoes = [
   {
     numero: "A6",
     tag: "Comunicação",
-    titulo: "Consolidador de descontos no Slack",
+    titulo: "Aviso de descontos no Slack",
     resumo:
       "Reúne todos os descontos conferidos no dia em um único aviso consolidado.",
     antes:
@@ -91,7 +91,7 @@ const automacoes = [
   {
     numero: "A7",
     tag: "Integração",
-    titulo: "Preenchimento automático de indenizações via Gmail",
+    titulo: "Indenizações via e-mail",
     resumo:
       "Lê e-mails de transportadoras, testa os anexos e preenche a base de indenização sozinho.",
     antes:
@@ -105,7 +105,7 @@ const automacoes = [
   {
     numero: "A8",
     tag: "Precisão",
-    titulo: "Cálculo automático de faturamento",
+    titulo: "Cálculo de faturamento",
     resumo:
       "Cruza bases externas com o controle geral e calcula o faturamento por transportadora.",
     antes:
@@ -133,7 +133,7 @@ const automacoes = [
   {
     numero: "A10",
     tag: "Proatividade",
-    titulo: "Alerta de prazos vencendo",
+    titulo: "Alerta de prazos",
     resumo:
       "Avisa no Slack, agrupado por responsável, quando um prazo está perto ou já venceu.",
     antes:
@@ -147,7 +147,7 @@ const automacoes = [
   {
     numero: "A11",
     tag: "Consolidação",
-    titulo: "Consolidação de descontos por transportadora",
+    titulo: "Organização de descontos",
     resumo:
       "Agrupa descontos aprovados por transportadora e organiza na aba certa automaticamente.",
     antes:
@@ -156,6 +156,21 @@ const automacoes = [
       'ao marcar uma linha como "OK", o script agrupa automaticamente por transportadora e escreve as linhas na aba "Página de Descontos", já com a atribuição correta.',
     resultado: "elimina a cópia manual e evita duplicidade com trava de execução.",
     stack: ["Google Apps Script", "Google Sheets"],
+  },
+  {
+    numero: "A12",
+    tag: "Visão gerencial",
+    titulo: "Dashboard de indenizações",
+    resumo:
+      "Painel visual que reúne todos os indicadores de indenização em um só lugar.",
+    antes:
+      "montar relatórios avulsos no Excel toda vez que a gestão pedia um panorama de indenizações, sem visão histórica nem comparação entre operações.",
+    agora:
+      "um painel único reúne KPIs, gráficos e rankings por transportadora, operação e status, com filtros de período e tema claro/escuro.",
+    resultado:
+      "visão gerencial em tempo real, sem montar planilha nenhuma para cada pedido de relatório.",
+    stack: ["HTML/CSS/JS", "Chart.js", "Google Sheets"],
+    link: "dashboard-indenizacoes.html",
   },
 ];
 
@@ -195,6 +210,7 @@ const modalAntes = document.getElementById("modal-antes");
 const modalAgora = document.getElementById("modal-agora");
 const modalResultado = document.getElementById("modal-resultado");
 const modalStack = document.getElementById("modal-stack");
+const modalLink = document.getElementById("modal-link");
 const modalFechar = document.getElementById("modal-fechar");
 
 let botaoQueAbriu = null;
@@ -213,6 +229,13 @@ function abrirModal(item, origem) {
     chip.textContent = ferramenta;
     modalStack.appendChild(chip);
   });
+
+  if (item.link) {
+    modalLink.href = item.link;
+    modalLink.hidden = false;
+  } else {
+    modalLink.hidden = true;
+  }
 
   botaoQueAbriu = origem;
   modal.classList.add("modal--aberto");
