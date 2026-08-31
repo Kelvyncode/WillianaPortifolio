@@ -81,7 +81,7 @@ const automacoes = [
     resumo:
       "Reúne todos os descontos conferidos no dia em um único aviso consolidado.",
     antes:
-      "avisar o time financeiro manualmente, um por um, sempre que um desconto da Petlog era conferido.",
+      "avisar o time financeiro manualmente, um por um, sempre que um desconto era conferido.",
     agora:
       'ao marcar "OK" na planilha, o script espera alguns segundos, junta todas as linhas marcadas, calcula o vencimento mais comum e publica um resumo com link direto para as linhas.',
     resultado:
@@ -109,7 +109,7 @@ const automacoes = [
     resumo:
       "Cruza bases externas com o controle geral e calcula o faturamento por transportadora.",
     antes:
-      "cruzar manualmente valores de diferentes bases (banco de dados e Petlog) com o controle geral para calcular o faturamento.",
+      "cruzar manualmente valores de diferentes bases com o controle geral para calcular o faturamento.",
     agora:
       "o script cruza automaticamente as bases externas com o controle, considerando quinzena, mensal ou pontual, e soma o valor certo por transportadora.",
     resultado:
