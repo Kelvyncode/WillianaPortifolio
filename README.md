@@ -28,6 +28,7 @@ Coloque as imagens na pasta `assets/` com estes nomes:
 | Arquivo                                       | Onde aparece           |
 |-----------------------------------------------|------------------------|
 | `assets/foto-perfil.jpg`                      | Foto de perfil no topo |
+| `assets/curriculo-williana-silva.pdf`         | Botão "Baixar currículo" |
 | `assets/galeria/*.jpg`                        | Galeria (carrossel)    |
 
 Enquanto a foto não existir, o site mostra um espaço reservado indicando o nome
