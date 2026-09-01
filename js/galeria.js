@@ -11,6 +11,11 @@ const AUTOMACOES_IMGS = [
     legenda: "Painel gerencial em HTML, CSS e Chart.js · dados fictícios",
   },
   {
+    arquivo: "assets/galeria/automacao-extravios.jpg",
+    titulo: "Relatório de extravios — retorno do script",
+    legenda: "30.843 linhas tratadas e classificadas em um ciclo · 83% menos tempo",
+  },
+  {
     arquivo: "assets/galeria/painel-pendencias.jpg",
     titulo: "Controle de pendências",
     legenda: "Reordena sozinho por status e responsável · dados fictícios",
