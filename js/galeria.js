@@ -1,48 +1,42 @@
 /* ============================================================
-   Galeria — carrossel automático
-   Para trocar as fotos, edite apenas a lista GALERIA abaixo e
-   coloque os arquivos em assets/galeria/.
+   Galerias — duas, com comportamentos diferentes
+   AUTOMACOES: telas largas, setas e pontos
+   CERTIFICADOS: folhas, navegação por miniaturas
+   Para trocar as imagens, edite só as duas listas abaixo.
    ============================================================ */
-const GALERIA = [
+const AUTOMACOES_IMGS = [
   {
     arquivo: "assets/galeria/dashboard-indenizacoes.jpg",
     titulo: "Dashboard de indenizações",
-    legenda: "Painel gerencial construído do zero em HTML, CSS e Chart.js · dados fictícios",
+    legenda: "Painel gerencial em HTML, CSS e Chart.js · dados fictícios",
   },
   {
     arquivo: "assets/galeria/painel-pendencias.jpg",
     titulo: "Controle de pendências",
-    legenda: "Painel que se reordena sozinho por status e responsável · dados fictícios",
+    legenda: "Reordena sozinho por status e responsável · dados fictícios",
   },
   {
     arquivo: "assets/galeria/slack-prazos.jpg",
     titulo: "Alerta de prazos no Slack",
     legenda: "Disparo diário às 8h, agrupado por responsável · dados fictícios",
   },
-  {
-    arquivo: "assets/galeria/slack-descontos.jpg",
-    titulo: "Consolidado de descontos no Slack",
-    legenda: "Um único aviso reunindo todos os descontos do dia · dados fictícios",
-  },
-  {
-    arquivo: "assets/galeria/automacao-aniversarios.jpg",
-    titulo: "Automação de aniversários",
-    legenda: "Aviso automático disparado pelo fluxo · nome fictício",
-  },
+];
+
+const CERTIFICADOS_IMGS = [
   {
     arquivo: "assets/galeria/diploma-logistica.jpg",
     titulo: "Tecnóloga em Logística",
-    legenda: "Universidade Pitágoras Unopar Anhanguera · colação de grau em jan 2026",
+    legenda: "Unopar Anhanguera · colação de grau em jan 2026",
   },
   {
     arquivo: "assets/galeria/certificado-ia.jpg",
     titulo: "Jornada Inteligência Artificial",
-    legenda: "Hashtag Treinamentos · 8 horas · concluído em jul 2025",
+    legenda: "Hashtag Treinamentos · 8 horas · jul 2025",
   },
   {
     arquivo: "assets/galeria/certificado-python.jpg",
     titulo: "Análise de Dados com Python",
-    legenda: "Universidade Pitágoras Unopar Anhanguera · trilha de 40 horas · 2025",
+    legenda: "Unopar Anhanguera · trilha de 40 horas · 2025",
   },
   {
     arquivo: "assets/galeria/certificado-excel.jpg",
@@ -51,44 +45,38 @@ const GALERIA = [
   },
 ];
 
-const INTERVALO = 5000;
+// Tempo que cada imagem fica na tela (ms)
+const INTERVALO_AUTOMACOES = 8000;
+const INTERVALO_CERTIFICADOS = 9000;
 
-(function iniciarGaleria() {
-  const carrossel = document.getElementById("carrossel");
-  const trilho = document.getElementById("carrossel-trilho");
-  const pontos = document.getElementById("carrossel-pontos");
-  const anterior = document.getElementById("carrossel-anterior");
-  const proxima = document.getElementById("carrossel-proxima");
+function montarCarrossel({ raiz, itens, intervalo, navegacao }) {
+  const carrossel = document.getElementById(raiz);
+  if (!carrossel || !itens.length) return;
 
-  if (!carrossel || !trilho || !GALERIA.length) return;
+  const trilho = carrossel.querySelector(".carrossel__trilho");
+  const nav = carrossel.querySelector(".carrossel__nav");
+  const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let atual = 0;
   let temporizador = null;
 
-  const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // ===== Monta os slides =====
-  GALERIA.forEach((item, i) => {
+  itens.forEach((item, i) => {
     const slide = document.createElement("li");
     slide.className = "carrossel__slide";
     slide.setAttribute("role", "group");
     slide.setAttribute("aria-roledescription", "slide");
-    slide.setAttribute("aria-label", `${i + 1} de ${GALERIA.length}`);
+    slide.setAttribute("aria-label", `${i + 1} de ${itens.length}`);
 
     const figura = document.createElement("figure");
-
     const img = document.createElement("img");
     img.src = item.arquivo;
     img.alt = item.titulo;
     img.loading = i === 0 ? "eager" : "lazy";
     img.decoding = "async";
-
-    // Enquanto a foto não existir, mostra o nome do arquivo esperado
     img.addEventListener("error", () => {
       const vazio = document.createElement("div");
       vazio.className = "carrossel__vazio";
-      vazio.innerHTML =
-        `<span>${item.titulo}</span><small>${item.arquivo}</small>`;
+      vazio.innerHTML = `<span>${item.titulo}</span><small>${item.arquivo}</small>`;
       img.replaceWith(vazio);
     });
 
@@ -100,39 +88,49 @@ const INTERVALO = 5000;
     slide.append(figura);
     trilho.append(slide);
 
-    const ponto = document.createElement("button");
-    ponto.type = "button";
-    ponto.className = "carrossel__ponto";
-    ponto.setAttribute("role", "tab");
-    ponto.setAttribute("aria-label", `Ir para a imagem ${i + 1}`);
-    ponto.addEventListener("click", () => {
+    // Navegação: ponto simples ou miniatura da própria imagem
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.setAttribute("role", "tab");
+    botao.setAttribute("aria-label", `Ir para: ${item.titulo}`);
+
+    if (navegacao === "miniaturas") {
+      botao.className = "carrossel__mini";
+      const mini = document.createElement("img");
+      mini.src = item.arquivo;
+      mini.alt = "";
+      mini.loading = "lazy";
+      botao.append(mini);
+    } else {
+      botao.className = "carrossel__ponto";
+    }
+
+    botao.addEventListener("click", () => {
       irPara(i);
       reiniciar();
     });
-    pontos.append(ponto);
+    nav.append(botao);
   });
 
-  const listaPontos = [...pontos.children];
+  const botoes = [...nav.children];
 
   function irPara(indice) {
-    atual = (indice + GALERIA.length) % GALERIA.length;
+    atual = (indice + itens.length) % itens.length;
     trilho.style.transform = `translateX(-${atual * 100}%)`;
-    [...trilho.children].forEach((slide, i) => {
-      slide.setAttribute("aria-hidden", String(i !== atual));
-    });
-    listaPontos.forEach((ponto, i) => {
-      ponto.classList.toggle("ativo", i === atual);
-      ponto.setAttribute("aria-selected", String(i === atual));
+    [...trilho.children].forEach((slide, i) =>
+      slide.setAttribute("aria-hidden", String(i !== atual))
+    );
+    botoes.forEach((b, i) => {
+      b.classList.toggle("ativo", i === atual);
+      b.setAttribute("aria-selected", String(i === atual));
     });
   }
 
-  function avancar(passo) {
-    irPara(atual + passo);
-  }
+  const avancar = (passo) => irPara(atual + passo);
 
   function iniciar() {
-    if (semMovimento || GALERIA.length < 2) return;
-    temporizador = setInterval(() => avancar(1), INTERVALO);
+    if (semMovimento || itens.length < 2 || temporizador) return;
+    temporizador = setInterval(() => avancar(1), intervalo);
   }
 
   function parar() {
@@ -145,60 +143,54 @@ const INTERVALO = 5000;
     iniciar();
   }
 
-  anterior.addEventListener("click", () => {
-    avancar(-1);
-    reiniciar();
+  carrossel.querySelectorAll("[data-passo]").forEach((seta) => {
+    seta.addEventListener("click", () => {
+      avancar(Number(seta.dataset.passo));
+      reiniciar();
+    });
   });
 
-  proxima.addEventListener("click", () => {
-    avancar(1);
-    reiniciar();
-  });
-
-  // Pausa quando o visitante está olhando ou navegando pelo teclado
   carrossel.addEventListener("mouseenter", parar);
   carrossel.addEventListener("mouseleave", iniciar);
   carrossel.addEventListener("focusin", parar);
   carrossel.addEventListener("focusout", iniciar);
-  document.addEventListener("visibilitychange", () => {
-    document.hidden ? parar() : iniciar();
-  });
+  document.addEventListener("visibilitychange", () =>
+    document.hidden ? parar() : iniciar()
+  );
 
-  // Teclado
   carrossel.setAttribute("tabindex", "0");
-  carrossel.addEventListener("keydown", (evento) => {
-    if (evento.key === "ArrowLeft") {
-      avancar(-1);
-      reiniciar();
-    }
-    if (evento.key === "ArrowRight") {
-      avancar(1);
-      reiniciar();
-    }
+  carrossel.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") { avancar(-1); reiniciar(); }
+    if (e.key === "ArrowRight") { avancar(1); reiniciar(); }
   });
 
-  // Arrastar no celular
   let inicioX = null;
-  carrossel.addEventListener(
-    "touchstart",
-    (evento) => {
-      inicioX = evento.touches[0].clientX;
-      parar();
-    },
-    { passive: true }
-  );
-  carrossel.addEventListener(
-    "touchend",
-    (evento) => {
-      if (inicioX === null) return;
-      const distancia = evento.changedTouches[0].clientX - inicioX;
-      if (Math.abs(distancia) > 45) avancar(distancia < 0 ? 1 : -1);
-      inicioX = null;
-      iniciar();
-    },
-    { passive: true }
-  );
+  carrossel.addEventListener("touchstart", (e) => {
+    inicioX = e.touches[0].clientX;
+    parar();
+  }, { passive: true });
+  carrossel.addEventListener("touchend", (e) => {
+    if (inicioX === null) return;
+    const d = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(d) > 45) avancar(d < 0 ? 1 : -1);
+    inicioX = null;
+    iniciar();
+  }, { passive: true });
 
   irPara(0);
   iniciar();
-})();
+}
+
+montarCarrossel({
+  raiz: "galeria-automacoes",
+  itens: AUTOMACOES_IMGS,
+  intervalo: INTERVALO_AUTOMACOES,
+  navegacao: "pontos",
+});
+
+montarCarrossel({
+  raiz: "galeria-certificados",
+  itens: CERTIFICADOS_IMGS,
+  intervalo: INTERVALO_CERTIFICADOS,
+  navegacao: "miniaturas",
+});

@@ -21,7 +21,6 @@
         <li><a href="#reconhecimentos" class="nav__link">Reconhecimentos</a></li>
         <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
         <li><a href="#certificacoes" class="nav__link">Certificações</a></li>
-        <li><a href="#galeria" class="nav__link">Galeria</a></li>
         <li><a href="#contato" class="nav__link">Contato</a></li>
       </ul>
     </nav>
@@ -196,6 +195,19 @@
         clique na etiqueta de cada card para ver antes, agora e resultado.
       </p>
       <div class="automacoes__grade reveal" id="automacoes-grade"></div>
+
+      <div class="carrossel carrossel--telas reveal" id="galeria-automacoes"
+           aria-roledescription="carrossel" aria-label="Telas das automações">
+        <div class="carrossel__palco">
+          <ul class="carrossel__trilho"></ul>
+        </div>
+        <button class="carrossel__seta carrossel__seta--anterior" data-passo="-1"
+                type="button" aria-label="Tela anterior">&#8249;</button>
+        <button class="carrossel__seta carrossel__seta--proxima" data-passo="1"
+                type="button" aria-label="Próxima tela">&#8250;</button>
+        <div class="carrossel__nav carrossel__nav--pontos" role="tablist"
+             aria-label="Selecionar tela"></div>
+      </div>
     </section>
 
     <!-- ===== RECONHECIMENTOS ===== -->
@@ -349,7 +361,8 @@
       <div class="container">
       <h2 class="secao__titulo reveal"><span class="secao__num">06</span> Certificações</h2>
       <p class="secao__descricao reveal">
-        Formação acadêmica e cursos concluídos nas áreas que sustentam meu trabalho.
+        Formação acadêmica e cursos concluídos nas áreas que sustentam meu trabalho —
+        os documentos estão logo abaixo.
       </p>
       <div class="certificados">
         <article class="certificado reveal">
@@ -378,39 +391,22 @@
           <p class="certificado__meta">8 horas · jul 2025</p>
         </article>
       </div>
-      </div>
-    </section>
 
-    <!-- ===== GALERIA ===== -->
-    <section id="galeria" class="secao container">
-      <div>
-        <h2 class="secao__titulo reveal"><span class="secao__num">07</span> Galeria</h2>
-        <p class="secao__descricao reveal">
-          Certificados e soluções criadas com apoio de IA. As imagens passam sozinhas —
-          use as setas ou os pontos para navegar.
-        </p>
-
-        <div class="carrossel reveal" id="carrossel" aria-roledescription="carrossel"
-             aria-label="Galeria de certificados e projetos">
-          <div class="carrossel__palco">
-            <ul class="carrossel__trilho" id="carrossel-trilho"></ul>
-          </div>
-
-          <button class="carrossel__seta carrossel__seta--anterior" id="carrossel-anterior"
-                  type="button" aria-label="Imagem anterior">&#8249;</button>
-          <button class="carrossel__seta carrossel__seta--proxima" id="carrossel-proxima"
-                  type="button" aria-label="Próxima imagem">&#8250;</button>
-
-          <div class="carrossel__pontos" id="carrossel-pontos" role="tablist"
-               aria-label="Selecionar imagem"></div>
+      <div class="carrossel carrossel--folhas reveal" id="galeria-certificados"
+           aria-roledescription="carrossel" aria-label="Certificados">
+        <div class="carrossel__palco">
+          <ul class="carrossel__trilho"></ul>
         </div>
+        <div class="carrossel__nav carrossel__nav--miniaturas" role="tablist"
+             aria-label="Selecionar certificado"></div>
+      </div>
       </div>
     </section>
 
     <!-- ===== CONTATO ===== -->
     <section id="contato" class="secao secao--alt">
       <div class="container contato">
-        <h2 class="secao__titulo reveal"><span class="secao__num">08</span> Contato</h2>
+        <h2 class="secao__titulo reveal"><span class="secao__num">07</span> Contato</h2>
         <p class="contato__chamada reveal">
           Vamos conversar sobre como dados e automação podem gerar
           resultados concretos no seu negócio.

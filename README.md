@@ -16,8 +16,10 @@ moderno monocromático.
 6. **Habilidades** — competências técnicas, com as ferramentas de cada área, e o
    bloco *Como eu trabalho* com as competências comportamentais
 7. **Certificações** — formação acadêmica e cursos concluídos
-8. **Galeria** — carrossel automático com certificados e soluções feitas com apoio de IA
-9. **Contato** — LinkedIn, e-mail e GitHub
+8. **Contato** — LinkedIn, e-mail e GitHub
+
+As galerias não são uma seção própria: a das automações fica dentro de *Automações*
+e a dos certificados dentro de *Certificações*.
 
 ## Como adicionar as fotos
 
@@ -31,20 +33,27 @@ Coloque as imagens na pasta `assets/` com estes nomes:
 Enquanto a foto não existir, o site mostra um espaço reservado indicando o nome
 do arquivo esperado.
 
-### Galeria
+### Galerias
 
-As imagens do carrossel são definidas na lista `GALERIA`, no topo do `js/galeria.js`.
-Cada item tem `arquivo`, `titulo` e `legenda` — para acrescentar uma foto, copie um
-bloco, salve a imagem em `assets/galeria/` e aponte o `arquivo` para ela. Não há
-limite de quantidade; os pontos de navegação são criados automaticamente.
+São duas, cada uma dentro da sua seção e com comportamento próprio:
 
-As telas de automação na galeria são **recriações com dados fictícios** das saídas
-reais dos scripts (nomes de pessoas e transportadoras trocados). O diploma está
-publicado com RG, data de nascimento e código de validação tarjados.
+- **Automações** (dentro da seção Automações) — telas largas, com setas e pontos.
+  Lista `AUTOMACOES_IMGS` no topo do `js/galeria.js`
+- **Certificados** (dentro de Certificações) — formato folha, navegação por
+  miniaturas clicáveis. Lista `CERTIFICADOS_IMGS`
 
-O carrossel troca de imagem a cada 5 segundos (ajustável em `INTERVALO`), pausa quando
-o mouse ou o teclado está sobre ele, aceita setas do teclado e arrastar no celular, e
-não roda sozinho para quem usa `prefers-reduced-motion`.
+Cada item tem `arquivo`, `titulo` e `legenda` — para acrescentar uma imagem, copie um
+bloco, salve o arquivo em `assets/galeria/` e aponte o `arquivo` para ele. Os pontos e
+as miniaturas são criados automaticamente.
+
+O tempo de cada imagem na tela está em `INTERVALO_AUTOMACOES` (8s) e
+`INTERVALO_CERTIFICADOS` (9s). Ambas pausam quando o mouse ou o teclado está sobre
+elas, aceitam setas do teclado e arrastar no celular, e não rodam sozinhas para quem
+usa `prefers-reduced-motion`.
+
+As telas de automação são **recriações com dados fictícios** das saídas reais dos
+scripts (nomes de pessoas e transportadoras trocados). O diploma está publicado com
+RG, data de nascimento e código de validação tarjados.
 
 ## Como personalizar
 
