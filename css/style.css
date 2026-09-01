@@ -166,14 +166,20 @@ html {
 }
 
 .hero__subtitulo {
-  margin-top: 1.25rem;
+  margin-top: 1.35rem;
   max-width: 34rem;
   font-size: 1.15rem;
+  line-height: 1.65;
   color: var(--cinza-300);
 }
 
+.hero__subtitulo strong {
+  color: var(--branco);
+  font-weight: 600;
+}
+
 .hero__acoes {
-  margin-top: 2rem;
+  margin-top: 2.9rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
