@@ -695,7 +695,21 @@ body.sem-rolagem {
   color: var(--cinza-500);
 }
 
+.habilidades__grid--duplas {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+@media (max-width: 760px) {
+  .habilidades__grid--duplas {
+    grid-template-columns: 1fr;
+  }
+}
+
 .habilidades__grupo {
+  max-width: 900px;
+  margin-inline: auto;
   color: var(--branco);
   font-size: 1rem;
   font-weight: 600;
@@ -711,41 +725,70 @@ body.sem-rolagem {
    ============================================================ */
 .premios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.4rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  max-width: 900px;
+  margin: 2.5rem auto 0;
 }
 
 .premio {
-  background: var(--preto);
+  position: relative;
+  background: linear-gradient(160deg, var(--cinza-900), var(--preto) 65%);
   border: 1px solid var(--cinza-700);
   border-radius: var(--raio);
-  padding: 1.8rem;
-  transition: border-color var(--transicao);
+  padding: 2.4rem 2rem 2rem;
+  overflow: hidden;
+  transition: border-color var(--transicao), transform var(--transicao);
+}
+
+/* filete superior que se acende no hover */
+.premio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 2px;
+  background: var(--cinza-500);
+  transition: width 0.45s ease, background var(--transicao);
 }
 
 .premio:hover {
   border-color: var(--cinza-400);
+  transform: translateY(-3px);
+}
+
+.premio:hover::before {
+  width: 100%;
+  background: var(--branco);
 }
 
 .premio__periodo {
   color: var(--cinza-500);
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .premio h3 {
   color: var(--branco);
-  font-size: 1.1rem;
-  line-height: 1.35;
-  margin-bottom: 0.6rem;
+  font-size: 1.28rem;
+  line-height: 1.3;
+  margin-bottom: 0.9rem;
+  text-wrap: balance;
 }
 
 .premio p:last-child {
   color: var(--cinza-400);
-  font-size: 0.92rem;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .premios {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Descrição em tópicos na linha do tempo */
