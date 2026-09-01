@@ -30,7 +30,7 @@ const automacoes = [
     agora:
       "3 módulos automatizados limpam, classificam e separam a base; outro script localiza os arquivos no Drive e dispara os e-mails.",
     resultado:
-      "cerca de 1.800 linhas processadas e 23 arquivos gerados e enviados automaticamente por ciclo.",
+      "83,33% menos tempo no processo — cerca de 110 horas economizadas por mês, com 1.800 linhas processadas e 23 arquivos gerados e enviados por ciclo.",
     stack: ["VBA · Excel", "Google Apps Script", "Gmail"],
   },
   {
@@ -43,7 +43,7 @@ const automacoes = [
     agora:
       "um script verifica a base todos os dias, avisa 3 dias antes do vencimento e cobra automaticamente as notas vencidas.",
     resultado:
-      "cobrança automática, rastreável e sem duplicidade — cada envio fica registrado.",
+      "100% do disparo manual eliminado — 330 minutos economizados por mês, com cada envio registrado e sem duplicidade.",
     stack: ["Google Apps Script", "Gmail", "Google Sheets"],
   },
   {
@@ -57,7 +57,7 @@ const automacoes = [
     agora:
       "ao marcar uma linha como pronta, o script preenche o modelo, exporta o PDF e salva direto na pasta certa do Drive.",
     resultado:
-      "elimina o preenchimento manual e padroniza o nome de cada arquivo gerado.",
+      "62,28% menos tempo no processo — 251 minutos economizados por mês, sem preenchimento manual e com nome de arquivo padronizado.",
     stack: ["Google Apps Script", "Google Sheets", "Google Drive"],
   },
   {
