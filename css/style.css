@@ -951,6 +951,16 @@ body.sem-rolagem {
 .carrossel__ponto.ativo { background: var(--branco); border-color: var(--branco); transform: scale(1.3); }
 .carrossel__ponto:focus-visible { outline: 2px solid var(--branco); outline-offset: 3px; }
 
+.carrossel__nota {
+  max-width: 880px;
+  margin: 0.9rem auto 0;
+  text-align: center;
+  color: var(--cinza-500);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
 /* ---- Certificados: folha, com miniaturas ---- */
 .carrossel--folhas .carrossel__palco {
   background: var(--preto);
