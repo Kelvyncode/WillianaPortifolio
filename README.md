@@ -12,20 +12,39 @@ moderno monocromático.
 4. **Automações** — grade com as 12 automações desenvolvidas; a etiqueta de cada card
    abre um modal com *antes*, *agora*, *resultado* e as ferramentas usadas. A A12 leva
    ao `dashboard-indenizacoes.html`, painel completo com Chart.js (dados fictícios)
-5. **Habilidades** — competências técnicas, com as ferramentas de cada área
-6. **Certificações** — formação acadêmica e cursos concluídos
-7. **Contato** — LinkedIn, e-mail e GitHub
+5. **Reconhecimentos** — prêmios e reconhecimentos recebidos na empresa
+6. **Habilidades** — competências técnicas, com as ferramentas de cada área, e o
+   bloco *Como eu trabalho* com as competências comportamentais
+7. **Certificações** — formação acadêmica e cursos concluídos
+8. **Galeria** — carrossel automático com certificados e soluções feitas com apoio de IA
+9. **Contato** — LinkedIn, e-mail e GitHub
 
 ## Como adicionar as fotos
 
 Coloque as imagens na pasta `assets/` com estes nomes:
 
-| Arquivo                  | Onde aparece            |
-|--------------------------|-------------------------|
-| `assets/foto-perfil.jpg` | Foto de perfil no topo  |
+| Arquivo                                       | Onde aparece           |
+|-----------------------------------------------|------------------------|
+| `assets/foto-perfil.jpg`                      | Foto de perfil no topo |
+| `assets/galeria/*.jpg`                        | Galeria (carrossel)    |
 
 Enquanto a foto não existir, o site mostra um espaço reservado indicando o nome
 do arquivo esperado.
+
+### Galeria
+
+As imagens do carrossel são definidas na lista `GALERIA`, no topo do `js/galeria.js`.
+Cada item tem `arquivo`, `titulo` e `legenda` — para acrescentar uma foto, copie um
+bloco, salve a imagem em `assets/galeria/` e aponte o `arquivo` para ela. Não há
+limite de quantidade; os pontos de navegação são criados automaticamente.
+
+As telas de automação na galeria são **recriações com dados fictícios** das saídas
+reais dos scripts (nomes de pessoas e transportadoras trocados). O diploma está
+publicado com RG, data de nascimento e código de validação tarjados.
+
+O carrossel troca de imagem a cada 5 segundos (ajustável em `INTERVALO`), pausa quando
+o mouse ou o teclado está sobre ele, aceita setas do teclado e arrastar no celular, e
+não roda sozinho para quem usa `prefers-reduced-motion`.
 
 ## Como personalizar
 

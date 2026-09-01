@@ -676,6 +676,108 @@ body.sem-rolagem {
   color: var(--cinza-500);
 }
 
+.habilidades__grupo {
+  color: var(--branco);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--cinza-800);
+}
+
+/* ============================================================
+   Reconhecimentos
+   ============================================================ */
+.premios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.premio {
+  background: var(--preto);
+  border: 1px solid var(--cinza-700);
+  border-radius: var(--raio);
+  padding: 1.8rem;
+  transition: border-color var(--transicao);
+}
+
+.premio:hover {
+  border-color: var(--cinza-400);
+}
+
+.premio__periodo {
+  color: var(--cinza-500);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.premio h3 {
+  color: var(--branco);
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+
+.premio p:last-child {
+  color: var(--cinza-400);
+  font-size: 0.92rem;
+}
+
+/* Descrição em tópicos na linha do tempo */
+.etapa__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+}
+
+.etapa__lista li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--cinza-400);
+  font-size: 0.92rem;
+}
+
+.etapa__lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 1px;
+  background: var(--cinza-500);
+}
+
+.etapa__lista strong {
+  color: var(--cinza-100);
+  font-weight: 600;
+}
+
+/* Empresa e cargo na linha do tempo */
+.etapa__empresa {
+  color: var(--cinza-500);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-left: 0.6rem;
+  white-space: nowrap;
+}
+
+.etapa__cargo {
+  color: var(--cinza-500);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
 /* ============================================================
    Certificações
    ============================================================ */
@@ -717,6 +819,181 @@ body.sem-rolagem {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   margin-top: 0.5rem;
+}
+
+/* ============================================================
+   Galeria — carrossel
+   ============================================================ */
+.carrossel {
+  position: relative;
+  margin-top: 2rem;
+  outline: none;
+}
+
+.carrossel:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 6px;
+  border-radius: var(--raio);
+}
+
+.carrossel__palco {
+  overflow: hidden;
+  border: 1px solid var(--cinza-700);
+  border-radius: var(--raio);
+  background: var(--preto);
+}
+
+.carrossel__trilho {
+  display: flex;
+  list-style: none;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carrossel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carrossel__slide figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.carrossel__slide img,
+.carrossel__vazio {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 42vw, 440px);
+  object-fit: contain;
+  background: var(--cinza-900);
+}
+
+.carrossel__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--cinza-800);
+}
+
+.carrossel__vazio span {
+  color: var(--cinza-300);
+  font-size: 0.95rem;
+}
+
+.carrossel__vazio small {
+  color: var(--cinza-500);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+.carrossel__slide figcaption {
+  border-top: 1px solid var(--cinza-800);
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.carrossel__slide figcaption strong {
+  color: var(--branco);
+  font-size: 0.98rem;
+}
+
+.carrossel__slide figcaption span {
+  color: var(--cinza-500);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.carrossel__seta {
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--cinza-100);
+  background: rgba(10, 10, 10, 0.78);
+  border: 1px solid var(--cinza-700);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color var(--transicao), background var(--transicao);
+}
+
+.carrossel__seta:hover {
+  border-color: var(--cinza-400);
+  background: var(--cinza-800);
+}
+
+.carrossel__seta:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 3px;
+}
+
+.carrossel__seta--anterior { left: 0.8rem; }
+.carrossel__seta--proxima  { right: 0.8rem; }
+
+.carrossel__pontos {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+}
+
+.carrossel__ponto {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--cinza-500);
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--transicao), border-color var(--transicao),
+              transform var(--transicao);
+}
+
+.carrossel__ponto:hover {
+  border-color: var(--cinza-300);
+}
+
+.carrossel__ponto.ativo {
+  background: var(--branco);
+  border-color: var(--branco);
+  transform: scale(1.25);
+}
+
+.carrossel__ponto:focus-visible {
+  outline: 2px solid var(--branco);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrossel__trilho {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .carrossel__seta {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
+
+  .carrossel__seta--anterior { left: 0.4rem; }
+  .carrossel__seta--proxima  { right: 0.4rem; }
+
+  .carrossel__slide figcaption {
+    padding: 0.9rem 1rem;
+  }
 }
 
 /* ============================================================

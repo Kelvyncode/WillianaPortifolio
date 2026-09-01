@@ -127,8 +127,8 @@ body.dark .kpi-bar-wrap{background:rgba(180,158,230,0.14);}
 .data-table tr:hover td{background:var(--table-hover);}
 .s-badge{display:inline-block;padding:2px 8px;border-radius:7px;font-size:10px;font-weight:700;}
 .s-malha{background:rgba(184,152,224,0.18);color:#4a2880;}
-.s-petlog{background:rgba(232,184,74,0.28);color:#6a4400;}
-.s-petja{background:rgba(126,200,160,0.22);color:#1e5434;}
+.s-expresso{background:rgba(232,184,74,0.28);color:#6a4400;}
+.s-premium{background:rgba(126,200,160,0.22);color:#1e5434;}
 .s-lojas{background:rgba(232,144,144,0.22);color:#7a2020;}
 .s-venc{background:rgba(232,144,144,0.22);color:#7a2020;}
 .s-prog{background:rgba(126,200,160,0.22);color:#1e5434;}
@@ -591,7 +591,7 @@ charts['prazoFaixa']=new Chart(c,{type:'bar',data:{labels:['≤ 30 dias','31–6
 }
 function renderFinTable(){
 const DATA=[{n:'Velozlog S.A.',op:'Rota Direta',ref:'31045',val:'R$ 7.234,90',venc:'10/07/2026',st:'ND Vencida',sc:'s-venc'},{n:'Cargueiro Norte',op:'Expresso',ref:'30982',val:'R$ 5.810,20',venc:'25/07/2026',st:'ND Vencida',sc:'s-venc'},{n:'TransSul Ltda',op:'Rota Direta',ref:'31120',val:'R$ 4.290,00',venc:'15/08/2026',st:'À Vencer',sc:'s-avencer'},{n:'AgilFrete',op:'Premium',ref:'30844',val:'R$ 3.980,75',venc:'30/09/2026',st:'Programado',sc:'s-prog'},{n:'MaxRota',op:'Local',ref:'31201',val:'R$ 2.750,40',venc:'20/08/2026',st:'À Vencer',sc:'s-avencer'},{n:'Entregas Boa Vista',op:'Rota Direta',ref:'30778',val:'R$ 2.140,00',venc:'05/06/2026',st:'Jurídico',sc:'s-jur'}];
-const opc={'Rota Direta':'s-malha',Expresso:'s-petlog',Premium:'s-petja',Local:'s-lojas'};
+const opc={'Rota Direta':'s-malha',Expresso:'s-expresso',Premium:'s-premium',Local:'s-lojas'};
 document.getElementById('fin-tbody').innerHTML=DATA.map((r,i)=>`<tr><td style="color:var(--text-muted);font-size:11px">${i+1}</td><td style="font-weight:600">${r.n}</td><td style="color:var(--text-muted)">${r.ref}</td><td style="text-align:right;font-weight:700;font-family:var(--font-display);font-size:11.5px">${r.val}</td><td style="color:var(--text-muted)">${r.venc}</td><td><span class="s-badge ${r.sc}">${r.st}</span></td></tr>`).join('');
 }
 /* ══ PERDAS ══ */
